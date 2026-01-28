@@ -1,0 +1,16 @@
+{
+  "name": "node-rest-grpc-mysql",
+  "version": "1.0.0",
+  "description": "REST + gRPC + MySQL Starter Project",
+  "main": "index.js",
+  "scripts": {
+    "start-rest": "node index.js",
+    "start-grpc": "node grpc-server.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.7.0",
+    "@grpc/proto-loader": "^0.7.6",
+    "express": "^4.22.1",
+    "mysql2": "^3.6.0"
+  }
+}
