@@ -47,5 +47,5 @@ app.post('/user', async (req, res) => {
 
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`✅ REST server running on port ${PORT}`);
+    console.log(`REST server running on port ${PORT}`);
 });

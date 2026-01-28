@@ -1,4 +1,4 @@
-console.log("🚀 gRPC server starting...");
+console.log("gRPC server starting...");
 
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
@@ -20,7 +20,7 @@ const grpcObj = grpc.loadPackageDefinition(packageDef);
 // 🔑 Access the package exactly as defined in proto
 const userPackage = grpcObj.user;
 if (!userPackage) {
-    console.error('❌ grpcObj.user is undefined! Check proto package name.');
+    console.error('grpcObj.user is undefined! Check proto package name.');
     process.exit(1);
 }
 
@@ -66,7 +66,7 @@ async function CreateUser(call, callback) {
 // Create gRPC server
 const server = new grpc.Server();
 
-// ✅ Add service correctly
+// Add service correctly
 server.addService(userPackage.userService.service, {
     GetUser,
     CreateUser
@@ -78,10 +78,10 @@ server.bindAsync(
     grpc.ServerCredentials.createInsecure(),
     (err, port) => {
         if (err) {
-            console.error('❌ Server binding error:', err);
+            console.error('Server binding error:', err);
             return;
         }
         server.start();
-        console.log(`✅ gRPC Server running on port ${port}`);
+        console.log(`gRPC Server running on port ${port}`);
     }
 );
